@@ -19,8 +19,8 @@ namespace Calculater.SolveEquation.Methods
             else
             {
                 equationResult.ResultType = ResultType.RealRoot;
-                equationResult.Root1 = (-1 * equation.B + Math.Sqrt(disc)) / 2 * equation.A;
-                equationResult.Root2 = (-1 * equation.B - Math.Sqrt(disc)) / 2 * equation.A;
+                equationResult.Root1 = (-1 * equation.B + Math.Sqrt(disc)) / (2 * equation.A);
+                equationResult.Root2 = (-1 * equation.B - Math.Sqrt(disc)) / (2 * equation.A);
             }
 
             return equationResult;

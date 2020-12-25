@@ -6,6 +6,7 @@ using Calculater.Models;
 using Calculater.SolveEquation.Methods;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Calculater.SolveEquation.Controllers
 {
@@ -15,15 +16,17 @@ namespace Calculater.SolveEquation.Controllers
     {
 
         [HttpGet("Solve")]
-        public IActionResult Get()
+        public IActionResult Get(int a, int b, int c)
         {
             var equation = new Equation()
             {
-                A = 2,
-                B = 2,
-                C = 4
+                A = a,
+                B = b,
+                C = c
             };
-            return Ok(EquationSolver.Solve(equation));
+            var eqResult = EquationSolver.Solve(equation);
+            var jsonString = JsonConvert.SerializeObject(eqResult);
+            return Ok(jsonString);
         }
     }
 }
