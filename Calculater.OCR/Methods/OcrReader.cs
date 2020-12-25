@@ -6,9 +6,8 @@ using Calculater.Models;
 
 namespace Calculater.OCR.Methods
 {
-    public static class ReadOCR
+    public static class OcrReader
     {
-
         public static Equation Read(ImageFile file)
         {
             Random rnd = new Random();

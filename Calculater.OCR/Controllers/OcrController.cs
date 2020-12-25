@@ -17,7 +17,7 @@ namespace Calculater.OCR.Controllers
             {
                 return NotFound();
             }
-            return Ok(ReadOCR.Read(imageFile));
+            return Ok(OcrReader.Read(imageFile));
         }
     }
 }
