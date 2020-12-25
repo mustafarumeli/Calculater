@@ -9,19 +9,12 @@ namespace Calculater.OCR.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class OCRController : ControllerBase
+    public class OcrController : ControllerBase
     {
         [HttpGet("OCR")]
         public IActionResult Get(string fileName)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok();
         }
     }
 }
