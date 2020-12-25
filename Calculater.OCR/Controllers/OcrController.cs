@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using Calculater.Database;
+using Calculater.OCR.Methods;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Calculater.OCR.Controllers
 {
@@ -14,7 +12,12 @@ namespace Calculater.OCR.Controllers
         [HttpGet("OCR")]
         public IActionResult Get(string fileName)
         {
-            return Ok();
+            var imageFile = DbFactory.ImageFiles.FirstOrDefault(x => x.FileName == fileName);
+            if (imageFile == null)
+            {
+                return NotFound();
+            }
+            return Ok(ReadOCR.Read(imageFile));
         }
     }
 }

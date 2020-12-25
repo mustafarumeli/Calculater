@@ -4,5 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Calculater.Database\Calculater.Database.csproj" />
+  </ItemGroup>
+
 
 </Project>

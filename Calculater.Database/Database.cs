@@ -5,9 +5,9 @@ using Calculater.Models;
 
 namespace Calculater.Database
 {
-    public class Database
+    public static class DbFactory
     {
-        public IEnumerable<ImageFile> ImageFiles =>
+        public static IEnumerable<ImageFile> ImageFiles =>
             new List<ImageFile>()
             {
                 new ImageFile() {FileName = "image1.png"},
