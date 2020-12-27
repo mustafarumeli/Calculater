@@ -2,7 +2,7 @@
 
 namespace Calculater.Models
 {
-    public class ImageFile
+    public class ImageFile : RabbitMesseagable
     {
         public ImageFile()
         {
@@ -13,5 +13,9 @@ namespace Calculater.Models
         public string FileName { get; set; }
 
         public DateTime CreateDate { get; }
+        public string GetResult()
+        {
+            return FileName;
+        }
     }
 }
